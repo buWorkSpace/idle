@@ -1,0 +1,82 @@
+.header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 로고 영역 */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.logo-text strong {
+  color: #d62c2c;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  color: #777;
+  margin-left: 8px;
+}
+
+/* 네비게이션 */
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.nav li:hover,
+.nav .active {
+  color: #d62c2c;
+}
+
+/* Contact 버튼 */
+.contact-btn {
+  background: #d62c2c;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-btn:hover {
+  background: #b82020;
+}

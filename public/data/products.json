@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Shirt",
+    "imageName": "shirt.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=AE005nZeF-A&list=RDAE005nZeF-A&start_radio=1",
+    "description": "체크무늬로 완성한 브랜드 xxx의 봄 셔츠 컬렉션.",
+    "createdAt": "2025-10-22"
+  },
+  {
+    "id": 2,
+    "title": "Jeans",
+    "imageName": "jeans.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc002",
+    "description": "AI 기반으로 설계된 최적의 핏을 제공하는 데님.",
+    "createdAt": "2025-10-23"
+  },
+  {
+    "id": 3,
+    "title": "One-piece",
+    "imageName": "onepiece.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc003",
+    "description": "우아한 실루엣을 강조한 AI 스타일 원피스.",
+    "createdAt": "2025-10-24"
+  },
+  {
+    "id": 4,
+    "title": "Sweatshirt",
+    "imageName": "sweatshirt.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc004",
+    "description": "AI가 설계한 편안한 데일리 캐주얼 스웻셔츠.",
+    "createdAt": "2025-10-25"
+  },
+  {
+    "id": 5,
+    "title": "Outerwear",
+    "imageName": "outerwear.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc005",
+    "description": "AI가 추천하는 날씨 대응 아우터 컬렉션.",
+    "createdAt": "2025-10-26"
+  },
+  {
+    "id": 6,
+    "title": "Accessories",
+    "imageName": "accessories.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc006",
+    "description": "AI 기반 패션 액세서리 스타일링 제안.",
+    "createdAt": "2025-10-27"
+  },
+  {
+    "id": 7,
+    "title": "House Cleaning",
+    "imageName": "housecleaning.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc007",
+    "description": "AI 섬유 관리 시스템을 통한 의류 유지 서비스.",
+    "createdAt": "2025-10-28"
+  },
+  {
+    "id": 8,
+    "title": "Hat",
+    "imageName": "hat.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc008",
+    "description": "AI가 추천하는 헤드웨어 스타일링.",
+    "createdAt": "2025-10-29"
+  },
+  {
+    "id": 9,
+    "title": "Coat",
+    "imageName": "coat.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc009",
+    "description": "AI로 설계된 클래식한 코트 라인업.",
+    "createdAt": "2025-10-30"
+  },
+  {
+    "id": 10,
+    "title": "Bag",
+    "imageName": "bag.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc010",
+    "description": "AI 기반 지속가능 패션 가방 컬렉션.",
+    "createdAt": "2025-10-31"
+  },
+  {
+    "id": 11,
+    "title": "Scarf",
+    "imageName": "scarf.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc011",
+    "description": "AI가 제안하는 감각적인 스카프 스타일.",
+    "createdAt": "2025-11-01"
+  },
+  {
+    "id": 12,
+    "title": "Gloves",
+    "imageName": "gloves.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc012",
+    "description": "보온성과 디자인을 모두 잡은 AI 겨울 장갑.",
+    "createdAt": "2025-11-02"
+  },
+  {
+    "id": 13,
+    "title": "Sneakers",
+    "imageName": "sneakers.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc013",
+    "description": "AI 스타일 매칭 시스템으로 디자인된 스니커즈.",
+    "createdAt": "2025-11-03"
+  },
+  {
+    "id": 14,
+    "title": "Dress",
+    "imageName": "dress.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc014",
+    "description": "AI가 추천하는 맞춤형 드레스 스타일.",
+    "createdAt": "2025-11-04"
+  },
+  {
+    "id": 15,
+    "title": "Spring Cleaning",
+    "imageName": "springcleaning.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc015",
+    "description": "AI 워드로브 큐레이션을 통한 계절별 스타일 정리.",
+    "createdAt": "2025-11-05"
+  }
+]
