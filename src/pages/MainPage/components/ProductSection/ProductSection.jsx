@@ -75,8 +75,9 @@ function ProductSection({ onSelectItem }) {
           <div className="section-service">
             <h3>Services</h3>
             <p>
-              We can customize your fashion AI plan to suit your needs.
-              Most clients schedule regular fashion AI services.
+              While we can customize your fashion AI plan to suit your
+              needs, most clients schedule regular fashion AI 
+              services:
             </p>
           </div>
         </div>
