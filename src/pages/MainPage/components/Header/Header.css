@@ -28,20 +28,31 @@
   height: 28px;
 }
 
-.logo-text {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #111;
+.logo-right {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 
-.logo-text strong {
-  color: #d62c2c;
+.logo-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-.logo-sub {
-  font-size: 0.75rem;
-  color: #777;
-  margin-left: 8px;
+.logo-blind {
+  color: #C90000; 
+  font-weight: 800;
+}
+
+.logo-rivet {
+  color: #000000; 
+  font-weight: 800;
+}
+.logo-subtitle {
+  font-size: 0.8rem;
+  color: #4D4D4D;
+  margin-top: 0.1rem;
 }
 
 /* 네비게이션 */

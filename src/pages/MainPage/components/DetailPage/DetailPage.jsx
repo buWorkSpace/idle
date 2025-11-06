@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 function DetailPage({ item, onClose }) {
   if (!item) return null;
 
-  // YouTube 링크 자동 변환
+  // 유튜브 영상 주소 처리
   const getVideoSrc = (url) => {
     if (url.includes("youtube.com/watch")) {
       const videoId = url.split("v=")[1]?.split("&")[0];
@@ -18,10 +18,6 @@ function DetailPage({ item, onClose }) {
   return (
     <div className="detail-overlay" onClick={onClose}>
       <div className="detail-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>
-          <X size={20} />
-        </button>
-
         <div className="video-wrapper">
           {videoSrc.includes("youtube.com/embed") ? (
             <iframe
@@ -33,13 +29,28 @@ function DetailPage({ item, onClose }) {
               allowFullScreen
             ></iframe>
           ) : (
-            <video src={videoSrc} controls autoPlay muted className="detail-video" />
+            <video
+              src={videoSrc}
+              controls
+              autoPlay
+              muted
+              className="detail-video"
+            />
           )}
+
+          <div className="video-overlay"></div>
+          <span className="duration">2 min</span>
+
+          {/* 닫기 버튼 */}
+      <button className="close-btn" onClick={onClose}>
+        <img src="../Close.png" alt="close" />
+          </button>
         </div>
 
         <h3 className="detail-title">{item.title}</h3>
         <p className="detail-desc">
-          {item.description || "상품 설명이 없습니다."}
+          {item.description ||
+            "Our customers are currently using and customizing the simple and convenient Fashion AI Plan"}
         </p>
 
         <button className="btn-primary">Service shortcuts</button>

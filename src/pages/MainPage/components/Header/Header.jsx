@@ -6,12 +6,15 @@ function Header() {
       <div className="header-inner">
         {/* 로고 */}
         <div className="logo">
-          <img src="/logo.svg" alt="Blind Rivet Logo" className="logo-icon" />
-          <span className="logo-text">
-            <strong>Blind</strong> Rivet
-          </span>
-          <p className="logo-sub">AI assembly Services company</p>
+          <img src="/logo.png" alt="Blind Rivet Logo" className="logo-icon" />
+        <div className="logo-right">
+          <h1 className="logo-title">
+            <span className="logo-blind">Blind</span>
+            <span className="logo-rivet">Rivet</span>
+          </h1>
+          <p className="logo-subtitle">AI assembly Services company</p>
         </div>
+      </div>
 
         {/* 내비게이션 메뉴 */}
         <nav className="nav">

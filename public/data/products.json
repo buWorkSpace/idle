@@ -3,8 +3,8 @@
     "id": 1,
     "title": "One-piece",
     "imageName": "../One-piece.png",
-    "videoUrl": "https://www.youtube.com/watch?v=AE005nZeF-A&list=RDAE005nZeF-A&start_radio=1",
-    "description": "체크무늬로 완성한 브랜드 xxx의 봄 셔츠 컬렉션.",
+    "videoUrl": "https://www.youtube.com/watch?v=abc001",
+    "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-22"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Shirts",
     "imageName": "../Shirts.png",
     "videoUrl": "https://www.youtube.com/watch?v=abc002",
-    "description": "AI 기반으로 설계된 최적의 핏을 제공하는 데님.",
+    "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-23"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Jeans",
     "imageName": "../Jeans.png",
     "videoUrl": "https://www.youtube.com/watch?v=abc003",
-    "description": "우아한 실루엣을 강조한 AI 스타일 원피스.",
+    "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-24"
   },
   {
@@ -84,7 +84,7 @@
     "title": "Sweatshirt",
     "imageName": "../Sweatshirt.png",
     "videoUrl": "https://www.youtube.com/watch?v=abc011",
-    "description": "AI가 제안하는 감각적인 스카프 스타일.",
+    "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-11-01"
   },
   {
@@ -92,7 +92,7 @@
     "title": "Spring Cleaning",
     "imageName": "../Spring Cleaning.png",
     "videoUrl": "https://www.youtube.com/watch?v=abc012",
-    "description": "보온성과 디자인을 모두 잡은 AI 겨울 장갑.",
+    "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-11-02"
   },
   {
@@ -100,7 +100,7 @@
     "title": "House Cleaning",
     "imageName": "../House Cleaning.png",
     "videoUrl": "https://www.youtube.com/watch?v=abc013",
-    "description": "AI 스타일 매칭 시스템으로 디자인된 스니커즈.",
+    "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-11-03"
   },
   {
