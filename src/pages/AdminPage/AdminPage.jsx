@@ -1,76 +1,110 @@
 import "./AdminPage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
+import SearchBar from "./components/SearchBar/SearchBar";
+import DataTable from "./components/DataTable/DataTable";
+import Pagination from "./components/Pagination/Pagination";
+import RegisterModal from "./components/RegisterModal/RegisterModal";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
+import ViewModal from "./components/ViewModal/ViewModal"; // ✅ 추가
 
 function AdminPage() {
-  const [data, setData] = useState([
-    { id: 1, title: "One-piece", video: "https://youtu.be/example1", desc: "Sample description 1" },
-    { id: 2, title: "Shirts", video: "https://youtu.be/example2", desc: "Sample description 2" },
-    { id: 3, title: "Jeans", video: "https://youtu.be/example3", desc: "Sample description 3" },
-  ]);
+  const [data, setData] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [search, setSearch] = useState({ title: "", imageName: "" });
+  const [selectedItem, setSelectedItem] = useState(null);
 
-  const [editing, setEditing] = useState(null);
-  const [newTitle, setNewTitle] = useState("");
+  const [showRegister, setShowRegister] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
+  const [showView, setShowView] = useState(false); // ✅ 추가
 
-  const startEdit = (id, currentTitle) => {
-    setEditing(id);
-    setNewTitle(currentTitle);
-  };
+  // 데이터 로드
+  useEffect(() => {
+    fetch("/data/products.json")
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json);
+        setFiltered(json);
+      });
+  }, []);
 
-  const saveEdit = (id) => {
-    setData(data.map((item) => (item.id === id ? { ...item, title: newTitle } : item)));
-    setEditing(null);
-  };
-
-  const deleteItem = (id) => {
-    setData(data.filter((item) => item.id !== id));
+  // 검색 기능
+  const handleSearch = () => {
+    const result = data.filter(
+      (i) =>
+        i.title.toLowerCase().includes(search.title.toLowerCase()) &&
+        i.imageName.toLowerCase().includes(search.imageName.toLowerCase())
+    );
+    setFiltered(result);
   };
 
   return (
-    <div className="admin-container">
-      <header className="admin-header">
-        <h1>관리자 페이지</h1>
-        <button className="add-btn">+ 새 항목 추가</button>
-      </header>
+    <div className="admin-layout">
+      <Sidebar />
 
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Video URL</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>
-                {editing === item.id ? (
-                  <input
-                    value={newTitle}
-                    onChange={(e) => setNewTitle(e.target.value)}
-                    className="edit-input"
-                  />
-                ) : (
-                  item.title
-                )}
-              </td>
-              <td>{item.video}</td>
-              <td>{item.desc}</td>
-              <td>
-                {editing === item.id ? (
-                  <button onClick={() => saveEdit(item.id)}>저장</button>
-                ) : (
-                  <button onClick={() => startEdit(item.id, item.title)}>수정</button>
-                )}
-                <button onClick={() => deleteItem(item.id)}>삭제</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="admin-content">
+        <Header />
+
+        <div className="admin-inner">
+          <SearchBar
+            search={search}
+            setSearch={setSearch}
+            onSearch={handleSearch}
+            onReset={() => setFiltered(data)}
+          />
+
+          <div className="admin-controls">
+            <button
+              onClick={() => setShowRegister(true)}
+              className="register-btn"
+            >
+              등록하기
+            </button>
+          </div>
+
+          <DataTable
+            data={filtered}
+            onSelect={(item) => {
+              setSelectedItem(item);
+              setShowView(true); // ✅ 클릭 시 정보 보기 모달 열림
+            }}
+            onDelete={(item) => {
+              setSelectedItem(item);
+              setShowDelete(true);
+            }}
+          />
+
+          <Pagination />
+
+          {/* 등록 모달 */}
+          {showRegister && (
+            <RegisterModal
+              onClose={() => setShowRegister(false)}
+              onSave={(item) => setFiltered([...filtered, item])}
+            />
+          )}
+
+          {/* 삭제 모달 */}
+          {showDelete && selectedItem && (
+            <DeleteModal
+              item={selectedItem}
+              onClose={() => setShowDelete(false)}
+              onConfirm={() =>
+                setFiltered(filtered.filter((d) => d.id !== selectedItem.id))
+              }
+            />
+          )}
+
+          {/* 정보 보기 모달 ✅ 추가 */}
+          {showView && selectedItem && (
+            <ViewModal
+              item={selectedItem}
+              onClose={() => setShowView(false)}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
