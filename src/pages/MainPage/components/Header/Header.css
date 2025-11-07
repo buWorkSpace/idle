@@ -14,6 +14,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+  
 }
 
 /* 로고 영역 */
@@ -24,8 +26,8 @@
 }
 
 .logo-icon {
-  width: 28px;
-  height: 28px;
+  width: 50px;
+  height: 50px;
 }
 
 .logo-right {
@@ -35,59 +37,59 @@
 }
 
 .logo-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin: 0;
+  margin-bottom: 0.3rem;
 }
 
 .logo-blind {
   color: #C90000; 
-  font-weight: 800;
 }
 
 .logo-rivet {
   color: #000000; 
-  font-weight: 800;
 }
 .logo-subtitle {
   font-size: 0.8rem;
   color: #4D4D4D;
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
+  font-weight: 400;
 }
 
 /* 네비게이션 */
 .nav ul {
   display: flex;
   list-style: none;
-  gap: 24px;
+  gap: 40px;
   margin: 0;
   padding: 0;
 }
 
 .nav li {
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #333;
   transition: color 0.2s ease;
 }
 
 .nav li:hover,
 .nav .active {
-  color: #d62c2c;
+  color: #C90000;
 }
 
 /* Contact 버튼 */
 .contact-btn {
-  background: #d62c2c;
+  background: #C90000;
   color: #fff;
   border: none;
-  padding: 8px 18px;
+  padding: 8px 25px;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 300;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
 .contact-btn:hover {
-  background: #b82020;
+  background: #C90000;
 }

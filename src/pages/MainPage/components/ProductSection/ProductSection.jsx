@@ -20,7 +20,7 @@ function ProductSlider({ products, onSelectItem }) {
       <div className="slider-container">
         {index > 0 && (
           <button className="slide-btn left" onClick={handlePrev}>
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} />←
           </button>
         )}
         <div className="slider-wrapper">
@@ -39,7 +39,7 @@ function ProductSlider({ products, onSelectItem }) {
         </div>
         {index + itemsPerView < products.length && (
           <button className="slide-btn right" onClick={handleNext}>
-            <ChevronRight size={24} />
+            <ChevronRight size={24} />→
           </button>
         )}
       </div>
@@ -70,13 +70,13 @@ function ProductSection({ onSelectItem }) {
       <div className="product-inner">
         <div className="section-header">
           <div>
-            <h2 className="section-title">Our Top-Tier Service Is Widely Used</h2>
+            <h2 className="section-title">Our Top-Tier Service Is<br/> Widely Used</h2>
           </div>
           <div className="section-service">
             <h3>Services</h3>
             <p>
-              While we can customize your fashion AI plan to suit your
-              needs, most clients schedule regular fashion AI 
+              While we can customize your fashion AI plan to suit your<br/>
+              needs, most clients schedule regular fashion AI <br/>
               services:
             </p>
           </div>

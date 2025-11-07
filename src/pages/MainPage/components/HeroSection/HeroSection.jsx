@@ -5,16 +5,17 @@ function HeroSection() {
     <section className="hero-section">
       <div className="hero-overlay">
         <div className="hero-content">
+          <h2>Quality fashion AI at a fair price.</h2>
           <h1>
-            Specialized, efficient, <br /> and thorough fashion AI services.
+            Specialized, efficient, <br /> and thorough fashion<br/> AI services.
           </h1>
           <p>
-            We provide performing fashion AI tasks using the least amount of
+            We provide performing fashion AI tasks using the least<br/> amount of
             time, energy, and money.
           </p>
           <div className="hero-buttons">
-            <button className="btn-primary">Get Start Now</button>
-            <button className="btn-outline">View all Services</button>
+            <button className="M-btn-primary">Get Start Now</button>
+            <button className="M-btn-outline">View all Services</button>
           </div>
         </div>
       </div>
