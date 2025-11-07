@@ -1,58 +1,69 @@
 .hero-section {
   width: 100%;
-  height: 580px;
-  background-image: url("/img/hero-bg.jpg"); /* 배경 이미지 경로 수정 */
+  height: 600px;
+  background-image: url("/public/TopSection.png"); 
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+ justify-content: flex-start;
   color: #fff;
 }
 
-/* 어두운 반투명 오버레이 */
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  
 }
 
 /* 콘텐츠 */
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 700px;
-  padding: 0 20px;
+  text-align: left;
+  padding-left: 12%; /* ✅ 변경: 여백 일원화 */
+  white-space: normal; /* ✅ 추가: 줄바꿈 안정 */
 }
 
+.hero-content h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 18px;
+  color: black;
+  
+}
+
+
 .hero-content h1 {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 700;
   line-height: 1.4;
   margin-bottom: 18px;
+  color: black;
 }
 
 .hero-content p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
-  color: #f0f0f0;
+  color: #666666;
   margin-bottom: 28px;
+  
 }
 
 /* 버튼 */
 .hero-buttons {
   display: flex;
   gap: 14px;
-  justify-content: center;
 }
 
-.btn-primary {
-  background: #d62c2c;
+.M-btn-primary {
+  background: #C90000;
   border: none;
   color: #fff;
   padding: 10px 24px;
@@ -63,14 +74,14 @@
   transition: background 0.2s ease;
 }
 
-.btn-primary:hover {
+.M-btn-primary:hover {
   background: #b82020;
 }
 
-.btn-outline {
+.M-btn-outline {
   background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid #a6a6a6;
+  color: black;
   padding: 10px 24px;
   border-radius: 6px;
   font-size: 1rem;
@@ -79,7 +90,7 @@
   transition: all 0.2s ease;
 }
 
-.btn-outline:hover {
+.M-btn-outline:hover {
   background: #fff;
   color: #111;
 }
