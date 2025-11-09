@@ -8,38 +8,154 @@
   height: 60px;
 }
 
+/* 로고 영역 */
 .logo {
-  font-weight: 700;
-  color: #a90000;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-name span:first-child {
+  color: #a90000; /* Blind */
+}
+
+.brand-name span:last-child {
+  color: #000; /* Rivet */
+}
+
+.brand-subtext {
+  font-size: 10px;
+  color: #000;
+  margin-top: 2px;
+}
+
+/* 오른쪽 영역 */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
+/* 국기 */
+.flag-icon {
+  width: 22px;
+  height: 16px;
+}
+
+/* 언어 영역 */
 .lang {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
 }
 
+/* 관리자 드롭다운 */
+.admin-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-name {
+  font-weight: 700;
+  color: #556070;
+}
+
+/* Logout 버튼 */
 .logout {
   display: flex;
   align-items: center;
-  gap: 4px;
-  background: #a90000;
+  justify-content: center;
+  background: #b01717;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 6px 10px;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .logout:hover {
-  background: #8a0000;
+  background: #8f1111;
+}
+
+/* ✅ 반응형 */
+@media (max-width: 1024px) {
+  .admin-header {
+    padding: 8px 16px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .brand-subtext {
+    font-size: 9px;
+  }
+
+  .logout {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 8px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .brand-subtext {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-header {
+    padding: 6px 10px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .brand-subtext {
+    font-size: 7px;
+  }
+
+  .logout {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
 }

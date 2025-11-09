@@ -29,28 +29,33 @@ function RegisterModal({ onClose, onSave }) {
         </button>
         <h3>정보 등록</h3>
 
+        {/* Title */}
+        <label>Title</label>
         <input
           name="title"
-          placeholder="Title"
+          placeholder="Placeholder"
           value={form.title}
           onChange={handleChange}
         />
-        <input
-          name="imageName"
-          placeholder="이미지 이름"
-          value={form.imageName}
-          onChange={handleChange}
-        />
+
+        {/* 원본이미지 파일 */}
+        <label>원본이미지 파일</label>
+        <div className="file-input-row">
+          <input
+            type="text"
+            value={form.imageName}
+            placeholder="F:\\04_complate New Something\\1.jpg"
+            readOnly
+          />
+          <button className="open-btn">Open</button>
+        </div>
+
+        {/* 동영상 URL */}
+        <label>동영상 URL</label>
         <input
           name="videoUrl"
-          placeholder="동영상 URL"
+          placeholder="https://www.youtube.com/watch?v=tkk3Q0u6zSs"
           value={form.videoUrl}
-          onChange={handleChange}
-        />
-        <textarea
-          name="description"
-          placeholder="설명"
-          value={form.description}
           onChange={handleChange}
         />
 
@@ -58,8 +63,8 @@ function RegisterModal({ onClose, onSave }) {
           <button className="cancel" onClick={onClose}>
             Cancel
           </button>
-          <button className="save" onClick={handleSubmit}>
-            Save
+          <button className="delete" onClick={handleSubmit}>
+            Delete
           </button>
         </div>
       </div>
