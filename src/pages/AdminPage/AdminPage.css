@@ -1,15 +1,47 @@
 .admin-layout {
   display: flex;
+  flex-direction: column; /* ✅ 헤더 위, 나머지 아래 */
   min-height: 100vh;
   background: #f9f9f9;
+}
+
+/* ✅ 헤더 밑에 사이드바 + 콘텐츠 */
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px 16px;
 }
 
 .admin-content {
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .admin-inner {
   padding: 24px 40px;
+}
+
+/* 등록하기 버튼 */
+.register-btn {
+  background-color: #d62c2c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #b02121;
 }

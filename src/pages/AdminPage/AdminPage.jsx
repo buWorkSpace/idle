@@ -41,68 +41,72 @@ function AdminPage() {
 
   return (
     <div className="admin-layout">
-      <Sidebar />
+      {/* ✅ 헤더는 항상 페이지 상단 전체 */}
+      <Header />
 
-      <div className="admin-content">
-        <Header />
+      {/* ✅ 헤더 아래에 사이드바 + 콘텐츠 나란히 배치 */}
+      <div className="main-container">
+        <Sidebar />
 
-        <div className="admin-inner">
-          <SearchBar
-            search={search}
-            setSearch={setSearch}
-            onSearch={handleSearch}
-            onReset={() => setFiltered(data)}
-          />
+        <div className="admin-content">
+          <div className="admin-inner">
+            <SearchBar
+              search={search}
+              setSearch={setSearch}
+              onSearch={handleSearch}
+              onReset={() => setFiltered(data)}
+            />
 
-          <div className="admin-controls">
-            <button
-              onClick={() => setShowRegister(true)}
-              className="register-btn"
-            >
-              등록하기
-            </button>
+            <DataTable
+              data={filtered}
+              onSelect={(item) => {
+                setSelectedItem(item);
+                setShowView(true);
+              }}
+              onDelete={(item) => {
+                setSelectedItem(item);
+                setShowDelete(true);
+              }}
+            />
+
+            <Pagination />
+
+            <div className="admin-controls">
+              <button
+                onClick={() => setShowRegister(true)}
+                className="register-btn"
+              >
+                등록하기
+              </button>
+            </div>
+
+            {/* 등록 모달 */}
+            {showRegister && (
+              <RegisterModal
+                onClose={() => setShowRegister(false)}
+                onSave={(item) => setFiltered([...filtered, item])}
+              />
+            )}
+
+            {/* 삭제 모달 */}
+            {showDelete && selectedItem && (
+              <DeleteModal
+                item={selectedItem}
+                onClose={() => setShowDelete(false)}
+                onConfirm={() =>
+                  setFiltered(filtered.filter((d) => d.id !== selectedItem.id))
+                }
+              />
+            )}
+
+            {/* 정보 보기 모달 */}
+            {showView && selectedItem && (
+              <ViewModal
+                item={selectedItem}
+                onClose={() => setShowView(false)}
+              />
+            )}
           </div>
-
-          <DataTable
-            data={filtered}
-            onSelect={(item) => {
-              setSelectedItem(item);
-              setShowView(true); // ✅ 클릭 시 정보 보기 모달 열림
-            }}
-            onDelete={(item) => {
-              setSelectedItem(item);
-              setShowDelete(true);
-            }}
-          />
-
-          <Pagination />
-
-          {/* 등록 모달 */}
-          {showRegister && (
-            <RegisterModal
-              onClose={() => setShowRegister(false)}
-              onSave={(item) => setFiltered([...filtered, item])}
-            />
-          )}
-
-          {/* 삭제 모달 */}
-          {showDelete && selectedItem && (
-            <DeleteModal
-              item={selectedItem}
-              onClose={() => setShowDelete(false)}
-              onConfirm={() =>
-                setFiltered(filtered.filter((d) => d.id !== selectedItem.id))
-              }
-            />
-          )}
-
-          {/* 정보 보기 모달 ✅ 추가 */}
-          {showView && selectedItem && (
-            <ViewModal
-              item={selectedItem}
-              onClose={() => setShowView(false)}
-            />
-          )}
         </div>
       </div>
     </div>
