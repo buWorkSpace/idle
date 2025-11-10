@@ -9,7 +9,7 @@ function MainPage() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   return (
-    <div className="main-container">
+    <div className="M-main-container">
       <Header />
       <HeroSection />
       <ProductSection onSelectItem={setSelectedItem} />

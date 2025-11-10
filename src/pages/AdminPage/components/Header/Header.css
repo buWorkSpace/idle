@@ -27,7 +27,7 @@
 }
 
 .brand-name span:first-child {
-  color: #a90000; /* Blind */
+  color: #C90000; /* Blind */
 }
 
 .brand-name span:last-child {
@@ -78,7 +78,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #b01717;
+  background: #C90000;
   color: #fff;
   border: none;
   border-radius: 8px;

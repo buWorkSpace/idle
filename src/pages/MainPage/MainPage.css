@@ -1,9 +1,10 @@
-.main-container {
+.M-main-container {
   width: 100%;
   min-height: 100vh;
   background: #fff;
   font-family: "Pretendard", sans-serif;
   color: #1a1a1a;
+  display: block;
 }
 
 /* Hero Section */
