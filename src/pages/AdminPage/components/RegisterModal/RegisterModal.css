@@ -60,10 +60,9 @@ textarea {
   height: 80px;
 }
 
-/* 파일 입력 + Open 버튼 */
 .file-input-row {
   display: flex;
-  align-items: stretch; /* 높이 맞추기 */
+  align-items: stretch; 
   gap: 8px;
   margin-bottom: 14px;
 }
@@ -98,7 +97,7 @@ textarea {
   background: #8b1b1b;
 }
 
-/* 버튼 섹션 */
+
 .btns {
   display: flex;
   justify-content: space-between;
@@ -133,7 +132,7 @@ textarea {
   background: #941818;
 }
 
-/* 반응형 */
+
 @media (max-width: 480px) {
   .modal-box {
     width: 90%;

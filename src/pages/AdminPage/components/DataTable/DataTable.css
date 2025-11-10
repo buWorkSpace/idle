@@ -46,7 +46,7 @@
 }
 
 .data-table tbody tr:hover {
-  background-color: #faf3f3; /* 옅은 붉은 톤 hover */
+  background-color: #faf3f3; 
 }
 
 /* Delete Button */
@@ -64,19 +64,19 @@
 .delete-btn:hover {
   background: #b82020;
 }
-/* 번호 열 고정 및 줄바꿈 방지 */
+
 .data-table th:first-child,
 .data-table td:first-child {
-  width: 60px; /* 고정폭 */
-  white-space: nowrap; /* 줄바꿈 방지 */
+  width: 60px; 
+  white-space: nowrap; 
   text-align: center;
   vertical-align: middle;
 }
 
-/* 삭제 열 줄바꿈 방지 */
+
 .data-table th:last-child,
 .data-table td:last-child {
-  white-space: nowrap; /* 한 줄 유지 */
-  width: 80px; /* 폭 여유 있게 확보 */
+  white-space: nowrap; 
+  width: 80px; 
   text-align: center;
 }

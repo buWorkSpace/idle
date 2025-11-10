@@ -7,7 +7,7 @@ import DataTable from "./components/DataTable/DataTable";
 import Pagination from "./components/Pagination/Pagination";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
-import ViewModal from "./components/ViewModal/ViewModal"; // ✅ 추가
+import ViewModal from "./components/ViewModal/ViewModal";
 
 function AdminPage() {
   const [data, setData] = useState([]);
@@ -17,7 +17,7 @@ function AdminPage() {
 
   const [showRegister, setShowRegister] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  const [showView, setShowView] = useState(false); // ✅ 추가
+  const [showView, setShowView] = useState(false);
 
   // 데이터 로드
   useEffect(() => {
@@ -41,10 +41,8 @@ function AdminPage() {
 
   return (
     <div className="admin-layout">
-      {/* ✅ 헤더는 항상 페이지 상단 전체 */}
       <Header />
 
-      {/* ✅ 헤더 아래에 사이드바 + 콘텐츠 나란히 배치 */}
       <div className="main-container">
         <Sidebar />
 
@@ -80,7 +78,6 @@ function AdminPage() {
               </button>
             </div>
 
-            {/* 등록 모달 */}
             {showRegister && (
               <RegisterModal
                 onClose={() => setShowRegister(false)}
@@ -88,7 +85,6 @@ function AdminPage() {
               />
             )}
 
-            {/* 삭제 모달 */}
             {showDelete && selectedItem && (
               <DeleteModal
                 item={selectedItem}
@@ -99,7 +95,6 @@ function AdminPage() {
               />
             )}
 
-            {/* 정보 보기 모달 */}
             {showView && selectedItem && (
               <ViewModal
                 item={selectedItem}

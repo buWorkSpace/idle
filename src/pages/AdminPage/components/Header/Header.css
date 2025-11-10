@@ -27,11 +27,11 @@
 }
 
 .brand-name span:first-child {
-  color: #C90000; /* Blind */
+  color: #C90000; 
 }
 
 .brand-name span:last-child {
-  color: #000; /* Rivet */
+  color: #000; 
 }
 
 .brand-subtext {
@@ -40,20 +40,20 @@
   margin-top: 2px;
 }
 
-/* 오른쪽 영역 */
+
 .header-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* 국기 */
+
 .flag-icon {
   width: 22px;
   height: 16px;
 }
 
-/* 언어 영역 */
+
 .lang {
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@
   color: #333;
 }
 
-/* 관리자 드롭다운 */
+
 .admin-dropdown {
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@
   color: #556070;
 }
 
-/* Logout 버튼 */
+
 .logout {
   display: flex;
   align-items: center;
@@ -93,7 +93,7 @@
   background: #8f1111;
 }
 
-/* ✅ 반응형 */
+
 @media (max-width: 1024px) {
   .admin-header {
     padding: 8px 16px;
