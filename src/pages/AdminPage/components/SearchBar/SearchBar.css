@@ -6,7 +6,6 @@
   margin-bottom: 20px;
 }
 
-/* 상단 input 2개 */
 .search-inputs {
   display: flex;
   gap: 20px;
@@ -28,7 +27,6 @@
   background: #fff;
 }
 
-/* 하단 select 2개 */
 .search-selects {
   display: flex;
   gap: 20px;
@@ -52,7 +50,6 @@
   color: #555;
 }
 
-/* 버튼 영역 */
 .search-btns {
   text-align: right;
 }
@@ -76,7 +73,6 @@
   color: #fff;
 }
 
-/* 반응형 */
 @media (max-width: 768px) {
   .search-inputs,
   .search-selects {

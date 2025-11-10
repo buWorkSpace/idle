@@ -1,11 +1,10 @@
 .admin-layout {
   display: flex;
-  flex-direction: column; /* ✅ 헤더 위, 나머지 아래 */
+  flex-direction: column; 
   min-height: 100vh;
   background: #f9f9f9;
 }
 
-/* ✅ 헤더 밑에 사이드바 + 콘텐츠 */
 .main-container {
   display: flex;
   flex: 1;
@@ -30,7 +29,6 @@
   padding: 24px 40px;
 }
 
-/* 등록하기 버튼 */
 .register-btn {
   background-color: #d62c2c;
   color: #fff;
