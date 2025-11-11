@@ -75,8 +75,8 @@
 
 .D-close-btn {
   position: absolute;
-  top: 2px;   /* 영상 바깥 위쪽 */
-  right: 2px; /* 오른쪽 살짝 바깥 */
+  top: 2px;   
+  right: 2px;
   width: 30px;
   height: 30px;
   background: none;

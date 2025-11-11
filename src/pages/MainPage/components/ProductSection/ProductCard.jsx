@@ -12,5 +12,6 @@ function ProductCard({ item, onSelectItem }) {
     </div>
   );
 }
+/*posting pic >> products.json*/
 
 export default ProductCard;
