@@ -26,7 +26,7 @@ function SearchBar({ search, setSearch, onSearch, onReset }) {
         </div>
       </div>
 
-      {/* ✅ 추가된 드롭다운 영역 */}
+      {/* 추가된 드롭다운 영역 */}
       <div className="search-selects">
         <div>
           <label>유저권한</label>

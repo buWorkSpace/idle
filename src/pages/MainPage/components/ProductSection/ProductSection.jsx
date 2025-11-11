@@ -3,13 +3,17 @@ import "./ProductSection.css";
 import ProductCard from "./ProductCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// 개별 슬라이드 컴포넌트
 function ProductSlider({ products, onSelectItem }) {
-  const itemsPerView = 3;
+  const itemsPerView = 3;   // 한 번에 보여줄 아이템 수
   const [index, setIndex] = useState(0);
 
+  // 다음 슬라이드로 이동
   const handleNext = () => {
     if (index + itemsPerView < products.length) setIndex(index + itemsPerView);
   };
+
+  // 이전 슬라이드로 이동
 
   const handlePrev = () => {
     if (index - itemsPerView >= 0) setIndex(index - itemsPerView);
@@ -47,12 +51,13 @@ function ProductSlider({ products, onSelectItem }) {
   );
 }
 
+// 전체 상품 섹션
 function ProductSection({ onSelectItem }) {
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
     async function fetchProducts() {
-      const res = await fetch("/data/products.json");
+     const res = await fetch("/data/products.json");
       const data = await res.json();
 
       // 10개씩 끊어서 그룹화

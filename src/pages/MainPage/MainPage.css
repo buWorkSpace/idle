@@ -1,3 +1,4 @@
+/*전체 메인 페이지 컨테이너*/
 .M-main-container {
   width: 100%;
   min-height: 100vh;
@@ -7,7 +8,7 @@
   display: block;
 }
 
-/* Hero Section */
+/* Hero Section (메인 소개 문구 + 버튼)*/
 .hero {
   text-align: center;
   padding: 80px 20px 60px;
@@ -51,7 +52,7 @@
   cursor: pointer;
 }
 
-/* Service Section */
+/* 서비스 카드 목록,Service Section */
 .service-section {
   padding: 60px 20px;
   text-align: center;
@@ -63,6 +64,7 @@
   margin-bottom: 40px;
 }
 
+/*카드 리스트*/
 .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -71,6 +73,7 @@
   margin: 0 auto;
 }
 
+/* 개별 카드 기본 스타일 */
 .card {
   background: #fff;
   border: 1px solid #e6e6e6;
