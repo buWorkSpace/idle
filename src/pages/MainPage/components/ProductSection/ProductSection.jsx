@@ -19,6 +19,7 @@ function ProductSlider({ products, onSelectItem }) {
     if (index - itemsPerView >= 0) setIndex(index - itemsPerView);
   };
 
+  /* 제품 슬라이드 */
   return (
     <div className="slider-block">
       <div className="slider-container">

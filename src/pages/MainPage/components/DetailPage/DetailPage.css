@@ -77,7 +77,10 @@
 /* 닫기 */
 .D-close-btn {
   position: absolute;
+
   top: 2px;
+
+
   right: 2px;
   width: 30px;
   height: 30px;
