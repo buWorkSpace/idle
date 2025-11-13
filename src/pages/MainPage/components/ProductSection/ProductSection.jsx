@@ -5,21 +5,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // 개별 슬라이드 컴포넌트
 function ProductSlider({ products, onSelectItem }) {
-  const itemsPerView = 3;   // 한 번에 보여줄 아이템 수
+  const itemsPerView = 3; // 한 번에 보여줄 아이템 수
   const [index, setIndex] = useState(0);
 
-  // 다음 슬라이드로 이동
   const handleNext = () => {
     if (index + itemsPerView < products.length) setIndex(index + itemsPerView);
   };
-
-  // 이전 슬라이드로 이동
 
   const handlePrev = () => {
     if (index - itemsPerView >= 0) setIndex(index - itemsPerView);
   };
 
-  /* 제품 슬라이드 */
   return (
     <div className="slider-block">
       <div className="slider-container">
@@ -28,6 +24,7 @@ function ProductSlider({ products, onSelectItem }) {
             <ChevronLeft size={24} />←
           </button>
         )}
+
         <div className="slider-wrapper">
           <div
             className="slider-track"
@@ -42,6 +39,7 @@ function ProductSlider({ products, onSelectItem }) {
             ))}
           </div>
         </div>
+
         {index + itemsPerView < products.length && (
           <button className="slide-btn right" onClick={handleNext}>
             <ChevronRight size={24} />→
@@ -58,10 +56,12 @@ function ProductSection({ onSelectItem }) {
 
   useEffect(() => {
     async function fetchProducts() {
-     const res = await fetch("/data/products.json");
+      // ❗ GitHub Pages 호환 fetch 경로
+      const url = `${import.meta.env.BASE_URL}data/products.json`;
+      const res = await fetch(url);
       const data = await res.json();
 
-      // 10개씩 끊어서 그룹화
+      // 10개씩 그룹화
       const chunked = [];
       for (let i = 0; i < data.length; i += 10) {
         chunked.push(data.slice(i, i + 10));
@@ -76,24 +76,32 @@ function ProductSection({ onSelectItem }) {
       <div className="product-inner">
         <div className="section-header">
           <div>
-            <h2 className="section-title">Our Top-Tier Service Is<br/> Widely Used</h2>
+            <h2 className="section-title">
+              Our Top-Tier Service Is<br /> Widely Used
+            </h2>
           </div>
+
           <div className="section-service">
             <h3>Services</h3>
             <p>
-              While we can customize your fashion AI plan to suit your<br/>
-              needs, most clients schedule regular fashion AI <br/>
+              While we can customize your fashion AI plan to suit your
+              <br />
+              needs, most clients schedule regular fashion AI
+              <br />
               services:
             </p>
           </div>
         </div>
 
-        {/* 구분선 추가 */}
         <div className="divider-line"></div>
 
         {/* 두 줄 슬라이드 */}
         {groups.map((group, i) => (
-          <ProductSlider key={i} products={group} onSelectItem={onSelectItem} />
+          <ProductSlider
+            key={i}
+            products={group}
+            onSelectItem={onSelectItem}
+          />
         ))}
       </div>
     </section>

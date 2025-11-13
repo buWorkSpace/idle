@@ -18,10 +18,14 @@ function DetailPage({ item, onClose }) {
   return (
     <div className="detail-overlay" onClick={onClose}>
       <div className="detail-modal" onClick={(e) => e.stopPropagation()}>
-        {/* 닫기 버튼 */}
-      <button className="D-close-btn" onClick={onClose}>
-        <img src="../Close.png" alt="close" />
-          </button>
+
+        <button className="D-close-btn" onClick={onClose}>
+          <img 
+            src={`${import.meta.env.BASE_URL}Close.png`} 
+            alt="close" 
+          />
+        </button>
+
         <div className="video-wrapper">
           {videoSrc.includes("youtube.com/embed") ? (
             <iframe
@@ -44,8 +48,6 @@ function DetailPage({ item, onClose }) {
 
           <div className="video-overlay"></div>
           <span className="duration">2 min</span>
-
-          
         </div>
 
         <h3 className="detail-title">{item.title}</h3>
