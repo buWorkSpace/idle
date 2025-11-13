@@ -21,7 +21,7 @@ function AdminPage() {
 
   // 데이터 로드
   useEffect(() => {
-    fetch("/data/products.json")
+    fetch(`${import.meta.env.BASE_URL}data/products.json`)
       .then((res) => res.json())
       .then((json) => {
         setData(json);
