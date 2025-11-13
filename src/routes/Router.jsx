@@ -4,7 +4,7 @@ import AdminPage from "../pages/AdminPage/AdminPage";
 
 function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/idle">
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/admin" element={<AdminPage />} />
