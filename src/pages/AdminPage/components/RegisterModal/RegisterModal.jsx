@@ -15,6 +15,13 @@ function RegisterModal({ onClose, onSave }) {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleFileSelect = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setForm((prev) => ({ ...prev, imageName: file.name }));
+    }
+  };
+
   const handleSubmit = () => {
     if (!form.title || !form.imageName)
       return alert("Title과 이미지 이름은 필수입니다.");
@@ -47,7 +54,19 @@ function RegisterModal({ onClose, onSave }) {
             placeholder="F:\\04_complate New Something\\1.jpg"
             readOnly
           />
-          <button className="open-btn">Open</button>
+          <input
+            type="file"
+            id="imageFileInput"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleFileSelect}
+          />
+          <button
+            className="open-btn"
+            onClick={() => document.getElementById("imageFileInput").click()}
+          >
+            Open
+          </button>
         </div>
 
         {/* 동영상 URL */}
@@ -64,7 +83,7 @@ function RegisterModal({ onClose, onSave }) {
             Cancel
           </button>
           <button className="delete" onClick={handleSubmit}>
-            Delete
+            등록하기
           </button>
         </div>
       </div>
