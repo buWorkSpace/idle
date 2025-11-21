@@ -2,13 +2,8 @@
   {
     "id": 1,
     "title": "One-piece",
-<<<<<<< HEAD
-    "imageName": "One-piece.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc001",
-=======
     "imageName": "../One-piece.png",
     "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
->>>>>>> c98d72cab59f75ba947c4701c8acbe241d6942b5
     "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-22"
   },
