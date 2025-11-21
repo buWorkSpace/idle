@@ -3,7 +3,7 @@
     "id": 1,
     "title": "One-piece",
     "imageName": "../One-piece.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc001",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-22"
   },
@@ -118,5 +118,205 @@
     "videoUrl": "https://www.youtube.com/watch?v=abc015",
     "description": "AI 워드로브 큐레이션을 통한 계절별 스타일 정리.",
     "createdAt": "2025-11-05"
+  },
+  {
+    "id": 16,
+    "title": "Jacket",
+    "imageName": "jacket.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc016",
+    "description": "AI가 추천하는 클래식 재킷 스타일.",
+    "createdAt": "2025-11-06"
+  },
+  {
+    "id": 17,
+    "title": "Skirt",
+    "imageName": "skirt.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc017",
+    "description": "AI 기반 트렌디 스커트 스타일링.",
+    "createdAt": "2025-11-07"
+  },
+  {
+    "id": 18,
+    "title": "Boots",
+    "imageName": "boots.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc018",
+    "description": "계절별 AI 추천 부츠 컬렉션.",
+    "createdAt": "2025-11-08"
+  },
+  {
+    "id": 19,
+    "title": "Pants",
+    "imageName": "pants.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc019",
+    "description": "AI가 설계한 편안한 슬림핏 팬츠.",
+    "createdAt": "2025-11-09"
+  },
+  {
+    "id": 20,
+    "title": "Cardigan",
+    "imageName": "cardigan.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc020",
+    "description": "AI 기반 포근한 가디건 스타일.",
+    "createdAt": "2025-11-10"
+  },
+  {
+    "id": 21,
+    "title": "Socks",
+    "imageName": "socks.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc021",
+    "description": "AI가 추천하는 데일리 양말 컬렉션.",
+    "createdAt": "2025-11-11"
+  },
+  {
+    "id": 22,
+    "title": "Sneakers",
+    "imageName": "sneakers.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc022",
+    "description": "AI 기반 스포츠 & 캐주얼 스니커즈.",
+    "createdAt": "2025-11-12"
+  },
+  {
+    "id": 23,
+    "title": "T-Shirt",
+    "imageName": "tshirt.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc023",
+    "description": "AI가 추천하는 심플 데일리 티셔츠.",
+    "createdAt": "2025-11-13"
+  },
+  {
+    "id": 24,
+    "title": "Jumper",
+    "imageName": "jumper.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc024",
+    "description": "AI 기반 겨울 점퍼 스타일.",
+    "createdAt": "2025-11-14"
+  },
+  {
+    "id": 25,
+    "title": "Gloves",
+    "imageName": "gloves.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc025",
+    "description": "AI가 추천하는 겨울 장갑 패션.",
+    "createdAt": "2025-11-15"
+  },
+  {
+    "id": 26,
+    "title": "Scarf",
+    "imageName": "scarf.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc026",
+    "description": "포근한 AI 추천 머플러 스타일링.",
+    "createdAt": "2025-11-16"
+  },
+  {
+    "id": 27,
+    "title": "Suit",
+    "imageName": "suit.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc027",
+    "description": "AI 기반 포멀 수트 스타일.",
+    "createdAt": "2025-11-17"
+  },
+  {
+    "id": 28,
+    "title": "Vest",
+    "imageName": "vest.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc028",
+    "description": "AI가 제안하는 레이어드 베스트.",
+    "createdAt": "2025-11-18"
+  },
+  {
+    "id": 29,
+    "title": "Parka",
+    "imageName": "parka.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc029",
+    "description": "방한용 AI 설계 파카 추천.",
+    "createdAt": "2025-11-19"
+  },
+  {
+    "id": 30,
+    "title": "Blazer",
+    "imageName": "blazer.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc030",
+    "description": "AI 기반 클래식 블레이저 스타일.",
+    "createdAt": "2025-11-20"
+  },
+  {
+    "id": 31,
+    "title": "Cozy Pack",
+    "imageName": "cozy.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc031",
+    "description": "AI가 추천하는 포근한 홈웨어 패키지.",
+    "createdAt": "2025-11-21"
+  },
+  {
+    "id": 32,
+    "title": "Winter Set",
+    "imageName": "winter.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc032",
+    "description": "AI 기반 겨울철 필수 패션 세트.",
+    "createdAt": "2025-11-22"
+  },
+  {
+    "id": 33,
+    "title": "Holiday Look",
+    "imageName": "holiday.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc033",
+    "description": "AI 추천 연말 파티 스타일.",
+    "createdAt": "2025-11-23"
+  },
+  {
+    "id": 34,
+    "title": "Summer Breeze",
+    "imageName": "summer.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc034",
+    "description": "AI가 추천하는 여름철 라이트 룩.",
+    "createdAt": "2025-11-24"
+  },
+  {
+    "id": 35,
+    "title": "Eco-Friendly",
+    "imageName": "eco.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc035",
+    "description": "지속가능 패션을 위한 AI 추천 스타일.",
+    "createdAt": "2025-11-25"
+  },
+  {
+    "id": 36,
+    "title": "Street Wear",
+    "imageName": "street.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc036",
+    "description": "AI 기반 스트릿 감성 코디.",
+    "createdAt": "2025-11-26"
+  },
+  {
+    "id": 37,
+    "title": "Campus Look",
+    "imageName": "campus.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc037",
+    "description": "대학생 AI 추천 데일리 패션.",
+    "createdAt": "2025-11-27"
+  },
+  {
+    "id": 38,
+    "title": "Business Casual",
+    "imageName": "casual.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc038",
+    "description": "AI 추천 오피스 캐주얼 코디.",
+    "createdAt": "2025-11-28"
+  },
+  {
+    "id": 39,
+    "title": "Soft Mood",
+    "imageName": "soft.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc039",
+    "description": "AI 기반 소프트 감성 스타일.",
+    "createdAt": "2025-11-29"
+  },
+  {
+    "id": 40,
+    "title": "Daily Fit",
+    "imageName": "daily.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=abc040",
+    "description": "AI 추천 데일리 라이프웨어.",
+    "createdAt": "2025-11-30"
   }
 ]

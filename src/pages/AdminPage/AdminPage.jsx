@@ -15,6 +15,9 @@ function AdminPage() {
   const [search, setSearch] = useState({ title: "", imageName: "" });
   const [selectedItem, setSelectedItem] = useState(null);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 15;
+
   const [showRegister, setShowRegister] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [showView, setShowView] = useState(false);
@@ -37,7 +40,12 @@ function AdminPage() {
         i.imageName.toLowerCase().includes(search.imageName.toLowerCase())
     );
     setFiltered(result);
+    setCurrentPage(1);
   };
+
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const paginatedData = filtered.slice(start, end);
 
   return (
     <div className="admin-layout">
@@ -52,11 +60,14 @@ function AdminPage() {
               search={search}
               setSearch={setSearch}
               onSearch={handleSearch}
-              onReset={() => setFiltered(data)}
+              onReset={() => {
+                setFiltered(data);
+                setCurrentPage(1);
+              }}
             />
 
             <DataTable
-              data={filtered}
+              data={paginatedData}
               onSelect={(item) => {
                 setSelectedItem(item);
                 setShowView(true);
@@ -67,7 +78,11 @@ function AdminPage() {
               }}
             />
 
-            <Pagination />
+            <Pagination
+              currentPage={currentPage}
+              totalPage={Math.ceil(filtered.length / itemsPerPage)}
+              onPageChange={setCurrentPage}
+            />
 
             <div className="admin-controls">
               <button
@@ -81,7 +96,11 @@ function AdminPage() {
             {showRegister && (
               <RegisterModal
                 onClose={() => setShowRegister(false)}
-                onSave={(item) => setFiltered([...filtered, item])}
+                onSave={(item) => {
+                  const updated = [...data, item];
+                  setData(updated);
+                  setFiltered(updated);
+                }}
               />
             )}
 
@@ -89,9 +108,11 @@ function AdminPage() {
               <DeleteModal
                 item={selectedItem}
                 onClose={() => setShowDelete(false)}
-                onConfirm={() =>
-                  setFiltered(filtered.filter((d) => d.id !== selectedItem.id))
-                }
+                onConfirm={() => {
+                  const updated = data.filter((d) => d.id !== selectedItem.id);
+                  setData(updated);
+                  setFiltered(updated);
+                }}
               />
             )}
 
