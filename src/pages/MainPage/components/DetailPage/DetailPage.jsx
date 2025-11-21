@@ -45,9 +45,7 @@ function DetailPage({ item, onClose }) {
               className="detail-video"
             />
           )}
-
-          <div className="video-overlay"></div>
-          <span className="duration">2 min</span>
+          
         </div>
 
         <h3 className="detail-title">{item.title}</h3>
