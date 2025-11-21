@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "One-piece",
-    "imageName": "../One-piece.png",
+    "imageName": "One-piece.png",
     "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-22"
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Shirts",
     "imageName": "Shirts.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc002",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-23"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "Jeans",
     "imageName": "Jeans.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc003",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-10-24"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "title": "Sweatshirt",
     "imageName": "Sweatshirt.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc004",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "AI가 설계한 편안한 데일리 캐주얼 스웻셔츠.",
     "createdAt": "2025-10-25"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "title": "Spring Cleaning",
     "imageName": "Spring Cleaning.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc005",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "AI가 추천하는 날씨 대응 아우터 컬렉션.",
     "createdAt": "2025-10-26"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "title": "Accessories",
     "imageName": "TopSection.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc006",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "AI 기반 패션 액세서리 스타일링 제안.",
     "createdAt": "2025-10-27"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "title": "House Cleaning",
     "imageName": "House Cleaning.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc007",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "AI 섬유 관리 시스템을 통한 의류 유지 서비스.",
     "createdAt": "2025-10-28"
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "title": "Hat",
     "imageName": "TopSection.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc008",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "AI가 추천하는 헤드웨어 스타일링.",
     "createdAt": "2025-10-29"
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "title": "Coat",
     "imageName": "TopSection.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc009",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "AI로 설계된 클래식한 코트 라인업.",
     "createdAt": "2025-10-30"
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "title": "Bag",
     "imageName": "TopSection.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc010",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "AI 기반 지속가능 패션 가방 컬렉션.",
     "createdAt": "2025-10-31"
   },
@@ -83,7 +83,7 @@
     "id": 11,
     "title": "Sweatshirt",
     "imageName": "Sweatshirt.png",
-    "videoUrl": "https://www.youtube.com/watch?v=abc011",
+    "videoUrl": "https://www.youtube.com/watch?v=tkk3Q0u6zSs",
     "description": "Our customers are currently using and customizing the simple and convenient Fashion AI Plan",
     "createdAt": "2025-11-01"
   },
