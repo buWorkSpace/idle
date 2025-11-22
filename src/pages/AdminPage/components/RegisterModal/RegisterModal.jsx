@@ -21,57 +21,14 @@ function RegisterModal({ onClose, onSave }) {
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setImageFile(file);
-      setImageFileName(file.name);
+      setForm((prev) => ({ ...prev, imageName: file.name }));
     }
   };
 
-  const handleSubmit = async () => {
-    if (!form.title || !imageFile) {
-      alert("Title과 이미지 파일은 필수입니다.");
-      return;
-    }
-
-    const filePath = `${Date.now()}_${imageFile.name}`;
-
-    // Storage 업로드
-    const { error: uploadError } = await supabase.storage
-      .from("product-images")
-      .upload(filePath, imageFile);
-
-    if (uploadError) {
-      console.error(uploadError);
-      alert("이미지 업로드 실패");
-      return;
-    }
-
-    // Public URL 생성
-    const imageUrl = `${supabase.storage.from("product-images").getPublicUrl(filePath).data.publicUrl}`;
-
-    // DB Insert
-    const { data, error } = await supabase
-      .from("products")
-      .insert([
-        {
-          title: form.title,
-          imageurl: imageUrl,
-          videourl: form.videoUrl || "",
-          description: form.description || "",
-          createdat: new Date().toISOString().slice(0, 10),
-        },
-      ])
-      .select();
-
-    if (error) {
-      console.error("DB INSERT ERROR:", error);
-      alert("DB 저장 실패 (RLS 설정 확인 필요)");
-      return;
-    }
-
-    if (onSave) onSave(data[0]);
-
-    alert("등록 완료");
-    onClose();
+  const handleSubmit = () => {
+    if (!form.title || !form.imageName)
+      return alert("Title과 이미지 이름은 필수입니다.");
+    onSave({ ...form, createdAt: new Date().toISOString().split("T")[0] });
   };
 
   return (
@@ -101,7 +58,17 @@ function RegisterModal({ onClose, onSave }) {
             style={{ display: "none" }}
             onChange={handleFileSelect}
           />
-          <button className="open-btn" onClick={() => document.getElementById("imgFileInput").click()}>
+          <input
+            type="file"
+            id="imageFileInput"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleFileSelect}
+          />
+          <button
+            className="open-btn"
+            onClick={() => document.getElementById("imageFileInput").click()}
+          >
             Open
           </button>
         </div>

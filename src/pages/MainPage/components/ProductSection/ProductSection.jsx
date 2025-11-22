@@ -4,8 +4,9 @@ import ProductCard from "./ProductCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { supabase } from "../../../../api/supabase.js";
 
+// 개별 슬라이드 컴포넌트
 function ProductSlider({ products, onSelectItem }) {
-  const itemsPerView = 3;
+  const itemsPerView = 3; // 한 번에 보여줄 아이템 수
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
@@ -51,19 +52,18 @@ function ProductSlider({ products, onSelectItem }) {
   );
 }
 
+// 전체 상품 섹션
 function ProductSection({ onSelectItem }) {
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
     async function fetchProducts() {
-      const { data, error } = await supabase.from("products").select("*");
+      // ❗ GitHub Pages 호환 fetch 경로
+      const url = `${import.meta.env.BASE_URL}data/products.json`;
+      const res = await fetch(url);
+      const data = await res.json();
 
-      if (error) {
-        console.error("SUPABASE ERROR:", error);
-        return;
-      }
-
-      // 10개씩 묶기
+      // 10개씩 그룹화
       const chunked = [];
       for (let i = 0; i < data.length; i += 10) {
         chunked.push(data.slice(i, i + 10));
@@ -82,15 +82,18 @@ function ProductSection({ onSelectItem }) {
         <div className="section-header">
           <div>
             <h2 className="section-title">
-              Our Top-Tier Service<br />Is<br />Widely Used
+              Our Top-Tier Service Is<br /> Widely Used
             </h2>
           </div>
 
           <div className="section-service">
             <h3>Services</h3>
             <p>
-              While we can customize your fashion AI plan<br />
-              most clients schedule regular fashion AI services:
+              While we can customize your fashion AI plan to suit your
+              <br />
+              needs, most clients schedule regular fashion AI
+              <br />
+              services:
             </p>
           </div>
         </div>
@@ -98,7 +101,11 @@ function ProductSection({ onSelectItem }) {
         <div className="divider-line"></div>
 
         {groups.map((group, i) => (
-          <ProductSlider key={i} products={group} onSelectItem={onSelectItem} />
+          <ProductSlider
+            key={i}
+            products={group}
+            onSelectItem={onSelectItem}
+          />
         ))}
 
       </div>

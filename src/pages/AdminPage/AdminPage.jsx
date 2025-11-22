@@ -8,7 +8,6 @@ import Pagination from "./components/Pagination/Pagination";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
 import ViewModal from "./components/ViewModal/ViewModal";
-import { supabase } from "../../api/supabase.js";
 
 function AdminPage() {
   const [data, setData] = useState([]);
@@ -27,22 +26,12 @@ function AdminPage() {
   // 데이터 불러오기
   // ----------------------------------------------------
   useEffect(() => {
-    async function fetchProducts() {
-      const { data: products, error } = await supabase
-        .from("products")
-        .select("*")
-        .order("id");
-
-      if (error) {
-        console.error("Supabase 불러오기 오류:", error);
-        return;
-      }
-
-      setData(products);
-      setFiltered(products);
-    }
-
-    fetchProducts();
+    fetch(`${import.meta.env.BASE_URL}data/products.json`)
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json);
+        setFiltered(json);
+      });
   }, []);
 
   // ----------------------------------------------------
@@ -59,9 +48,6 @@ function AdminPage() {
     setCurrentPage(1);
   };
 
-  // ----------------------------------------------------
-  // 페이지네이션 계산
-  // ----------------------------------------------------
   const start = (currentPage - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const paginatedData = filtered.slice(start, end);
@@ -116,34 +102,29 @@ function AdminPage() {
               </button>
             </div>
 
-            {/* 등록 모달 */}
             {showRegister && (
               <RegisterModal
                 onClose={() => setShowRegister(false)}
-                onSave={(newItem) => {
-                  const updated = [...data, newItem];
+                onSave={(item) => {
+                  const updated = [...data, item];
                   setData(updated);
                   setFiltered(updated);
-                  setCurrentPage(1);
                 }}
               />
             )}
 
-            {/* 삭제 모달 */}
             {showDelete && selectedItem && (
               <DeleteModal
                 item={selectedItem}
                 onClose={() => setShowDelete(false)}
-                onConfirm={(deletedId) => {
-                  // DeleteModal이 DB + Storage 삭제 완료한 뒤 호출하는 부분
-                  const updated = data.filter((d) => d.id !== deletedId);
+                onConfirm={() => {
+                  const updated = data.filter((d) => d.id !== selectedItem.id);
                   setData(updated);
                   setFiltered(updated);
                 }}
               />
             )}
 
-            {/* 상세보기 모달 */}
             {showView && selectedItem && (
               <ViewModal
                 item={selectedItem}

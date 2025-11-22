@@ -48,6 +48,7 @@ function DetailPage({ item, onClose }) {
               className="detail-video"
             />
           )}
+          
         </div>
 
         <h3 className="detail-title">{item.title}</h3>
