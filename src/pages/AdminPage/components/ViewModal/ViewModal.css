@@ -71,3 +71,34 @@
   border: none;
   cursor: pointer;
 }
+
+
+/* View Modal 전체 크기 제한 */
+.modal-box {
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 9999;
+}
+
+/* 이미지 프리뷰 박스 */
+.image-preview {
+  width: 100%;
+  max-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 250px;
+  height: auto;
+  width: auto;
+  object-fit: contain;  /* 비율 유지 + 잘리지 않음 */
+  display: block;
+}

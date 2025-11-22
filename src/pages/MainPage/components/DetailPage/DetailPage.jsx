@@ -6,6 +6,8 @@ function DetailPage({ item, onClose }) {
 
   // 유튜브 영상 주소 처리
   const getVideoSrc = (url) => {
+    if (!url) return "";  // 방어 코드 추가 (undefined 방지)
+
     if (url.includes("youtube.com/watch")) {
       const videoId = url.split("v=")[1]?.split("&")[0];
       return `https://www.youtube.com/embed/${videoId}`;
@@ -13,7 +15,8 @@ function DetailPage({ item, onClose }) {
     return url;
   };
 
-  const videoSrc = getVideoSrc(item.videoUrl);
+  // ★ Supabase 실제 필드명 사용
+  const videoSrc = getVideoSrc(item.videourl);
 
   return (
     <div className="detail-overlay" onClick={onClose}>

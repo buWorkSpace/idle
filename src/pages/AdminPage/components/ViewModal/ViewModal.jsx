@@ -13,14 +13,19 @@ function ViewModal({ item, onClose }) {
 
         <h3>정보 보기</h3>
 
+        {/* 이미지 미리보기 */}
+        <div className="image-preview">
+          <img src={item.imageurl} alt={item.title} />
+        </div>
+
         <label>Title</label>
         <input type="text" value={item.title} readOnly />
 
-        <label>원본이미지 파일</label>
-        <input type="text" value={item.imageName} readOnly />
+        <label>이미지 URL</label>
+        <input type="text" value={item.imageurl} readOnly />
 
         <label>동영상 URL</label>
-        <input type="text" value={item.videoUrl} readOnly />
+        <input type="text" value={item.videourl} readOnly />
 
         <div className="btns">
           <button className="cancel" onClick={onClose}>

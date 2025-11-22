@@ -22,7 +22,9 @@ function AdminPage() {
   const [showDelete, setShowDelete] = useState(false);
   const [showView, setShowView] = useState(false);
 
-  // 데이터 로드
+  // ----------------------------------------------------
+  // 데이터 불러오기
+  // ----------------------------------------------------
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/products.json`)
       .then((res) => res.json())
@@ -32,13 +34,16 @@ function AdminPage() {
       });
   }, []);
 
+  // ----------------------------------------------------
   // 검색 기능
+  // ----------------------------------------------------
   const handleSearch = () => {
     const result = data.filter(
       (i) =>
         i.title.toLowerCase().includes(search.title.toLowerCase()) &&
-        i.imageName.toLowerCase().includes(search.imageName.toLowerCase())
+        i.imageurl.toLowerCase().includes(search.imageName.toLowerCase())
     );
+
     setFiltered(result);
     setCurrentPage(1);
   };
@@ -56,6 +61,8 @@ function AdminPage() {
 
         <div className="admin-content">
           <div className="admin-inner">
+
+            {/* 검색 */}
             <SearchBar
               search={search}
               setSearch={setSearch}
@@ -66,6 +73,7 @@ function AdminPage() {
               }}
             />
 
+            {/* 테이블 */}
             <DataTable
               data={paginatedData}
               onSelect={(item) => {
@@ -84,6 +92,7 @@ function AdminPage() {
               onPageChange={setCurrentPage}
             />
 
+            {/* 등록 버튼 */}
             <div className="admin-controls">
               <button
                 onClick={() => setShowRegister(true)}
@@ -122,6 +131,7 @@ function AdminPage() {
                 onClose={() => setShowView(false)}
               />
             )}
+
           </div>
         </div>
       </div>

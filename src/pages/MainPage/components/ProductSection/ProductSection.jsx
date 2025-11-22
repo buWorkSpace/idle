@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./ProductSection.css";
 import ProductCard from "./ProductCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { supabase } from "../../../../api/supabase.js";
 
 // 개별 슬라이드 컴포넌트
 function ProductSlider({ products, onSelectItem }) {
@@ -9,28 +10,29 @@ function ProductSlider({ products, onSelectItem }) {
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
-    if (index + itemsPerView < products.length) setIndex(index + itemsPerView);
+    if (index + itemsPerView < products.length)
+      setIndex(index + itemsPerView);
   };
 
   const handlePrev = () => {
-    if (index - itemsPerView >= 0) setIndex(index - itemsPerView);
+    if (index - itemsPerView >= 0)
+      setIndex(index - itemsPerView);
   };
 
   return (
     <div className="slider-block">
       <div className="slider-container">
+
         {index > 0 && (
           <button className="slide-btn left" onClick={handlePrev}>
-            <ChevronLeft size={24} />←
+            <ChevronLeft size={24} />
           </button>
         )}
 
         <div className="slider-wrapper">
           <div
             className="slider-track"
-            style={{
-              transform: `translateX(-${(index / itemsPerView) * 100}%)`,
-            }}
+            style={{ transform: `translateX(-${(index / itemsPerView) * 100}%)` }}
           >
             {products.map((item) => (
               <div className="slide-item" key={item.id}>
@@ -42,7 +44,7 @@ function ProductSlider({ products, onSelectItem }) {
 
         {index + itemsPerView < products.length && (
           <button className="slide-btn right" onClick={handleNext}>
-            <ChevronRight size={24} />→
+            <ChevronRight size={24} />
           </button>
         )}
       </div>
@@ -66,14 +68,17 @@ function ProductSection({ onSelectItem }) {
       for (let i = 0; i < data.length; i += 10) {
         chunked.push(data.slice(i, i + 10));
       }
+
       setGroups(chunked);
     }
+
     fetchProducts();
   }, []);
 
   return (
     <section className="product-section">
       <div className="product-inner">
+
         <div className="section-header">
           <div>
             <h2 className="section-title">
@@ -95,7 +100,6 @@ function ProductSection({ onSelectItem }) {
 
         <div className="divider-line"></div>
 
-        {/* 두 줄 슬라이드 */}
         {groups.map((group, i) => (
           <ProductSlider
             key={i}
@@ -103,6 +107,7 @@ function ProductSection({ onSelectItem }) {
             onSelectItem={onSelectItem}
           />
         ))}
+
       </div>
     </section>
   );

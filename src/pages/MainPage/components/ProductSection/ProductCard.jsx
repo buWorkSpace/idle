@@ -17,3 +17,4 @@ function ProductCard({ item, onSelectItem }) {
 }
 
 export default ProductCard;
+

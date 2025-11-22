@@ -1,14 +1,17 @@
 import "./RegisterModal.css";
 import { X } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "../../../../api/supabase.js";
 
 function RegisterModal({ onClose, onSave }) {
   const [form, setForm] = useState({
     title: "",
-    imageName: "",
     videoUrl: "",
     description: "",
   });
+
+  const [imageFile, setImageFile] = useState(null);
+  const [imageFileName, setImageFileName] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,25 +37,26 @@ function RegisterModal({ onClose, onSave }) {
         <button className="close-btn" onClick={onClose}>
           <X size={18} />
         </button>
+
         <h3>정보 등록</h3>
 
-        {/* Title */}
         <label>Title</label>
         <input
           name="title"
-          placeholder="Placeholder"
+          placeholder="상품명"
           value={form.title}
           onChange={handleChange}
         />
 
-        {/* 원본이미지 파일 */}
         <label>원본이미지 파일</label>
         <div className="file-input-row">
+          <input type="text" value={imageFileName} placeholder="이미지 파일 선택" readOnly />
           <input
-            type="text"
-            value={form.imageName}
-            placeholder="F:\\04_complate New Something\\1.jpg"
-            readOnly
+            type="file"
+            id="imgFileInput"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleFileSelect}
           />
           <input
             type="file"
@@ -69,12 +73,19 @@ function RegisterModal({ onClose, onSave }) {
           </button>
         </div>
 
-        {/* 동영상 URL */}
         <label>동영상 URL</label>
         <input
           name="videoUrl"
-          placeholder="https://www.youtube.com/watch?v=tkk3Q0u6zSs"
+          placeholder="https://www.youtube.com/watch?v=xxxx"
           value={form.videoUrl}
+          onChange={handleChange}
+        />
+
+        <label>설명</label>
+        <textarea
+          name="description"
+          placeholder="설명 입력"
+          value={form.description}
           onChange={handleChange}
         />
 
