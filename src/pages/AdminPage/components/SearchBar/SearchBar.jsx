@@ -11,6 +11,7 @@ function SearchBar({ search, setSearch, onSearch, onReset }) {
             placeholder="Placeholder"
             value={search.title}
             onChange={(e) => setSearch({ ...search, title: e.target.value })}
+            onKeyDown={(e) => { if (e.key === "Enter") onSearch(); }}
           />
         </div>
         <div>
@@ -22,15 +23,16 @@ function SearchBar({ search, setSearch, onSearch, onReset }) {
             onChange={(e) =>
               setSearch({ ...search, imageName: e.target.value })
             }
+            onKeyDown={(e) => { if (e.key === "Enter") onSearch(); }}
           />
         </div>
       </div>
 
-      {/* ✅ 추가된 드롭다운 영역 */}
+      {/* 추가된 드롭다운 영역 */}
       <div className="search-selects">
         <div>
           <label>유저권한</label>
-          <select>
+          <select disabled>
             <option>전체</option>
             <option>관리자</option>
             <option>일반사용자</option>
@@ -38,7 +40,7 @@ function SearchBar({ search, setSearch, onSearch, onReset }) {
         </div>
         <div>
           <label>삭제대기 여부</label>
-          <select>
+          <select disabled>
             <option>전체</option>
             <option>Y</option>
             <option>N</option>

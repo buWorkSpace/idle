@@ -7,7 +7,8 @@ import DataTable from "./components/DataTable/DataTable";
 import Pagination from "./components/Pagination/Pagination";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
-import ViewModal from "./components/ViewModal/ViewModal"; // ✅ 추가
+import ViewModal from "./components/ViewModal/ViewModal";
+import { supabase } from "../../api/supabase.js";
 
 function AdminPage() {
   const [data, setData] = useState([]);
@@ -15,50 +16,80 @@ function AdminPage() {
   const [search, setSearch] = useState({ title: "", imageName: "" });
   const [selectedItem, setSelectedItem] = useState(null);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 15;
+
   const [showRegister, setShowRegister] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  const [showView, setShowView] = useState(false); // ✅ 추가
+  const [showView, setShowView] = useState(false);
 
-  // 데이터 로드
+  // ----------------------------------------------------
+  // 데이터 불러오기
+  // ----------------------------------------------------
   useEffect(() => {
-    fetch("/data/products.json")
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        setFiltered(json);
-      });
+    async function fetchProducts() {
+      const { data: products, error } = await supabase
+        .from("products")
+        .select("*")
+        .order("id");
+
+      if (error) {
+        console.error("Supabase 불러오기 오류:", error);
+        return;
+      }
+
+      setData(products);
+      setFiltered(products);
+    }
+
+    fetchProducts();
   }, []);
 
+  // ----------------------------------------------------
   // 검색 기능
+  // ----------------------------------------------------
   const handleSearch = () => {
     const result = data.filter(
       (i) =>
         i.title.toLowerCase().includes(search.title.toLowerCase()) &&
-        i.imageName.toLowerCase().includes(search.imageName.toLowerCase())
+        i.imageurl.toLowerCase().includes(search.imageName.toLowerCase())
     );
+
     setFiltered(result);
+    setCurrentPage(1);
   };
+
+  // ----------------------------------------------------
+  // 페이지네이션 계산
+  // ----------------------------------------------------
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const paginatedData = filtered.slice(start, end);
 
   return (
     <div className="admin-layout">
-      {/* ✅ 헤더는 항상 페이지 상단 전체 */}
       <Header />
 
-      {/* ✅ 헤더 아래에 사이드바 + 콘텐츠 나란히 배치 */}
       <div className="main-container">
         <Sidebar />
 
         <div className="admin-content">
           <div className="admin-inner">
+
+            {/* 검색 */}
             <SearchBar
               search={search}
               setSearch={setSearch}
               onSearch={handleSearch}
-              onReset={() => setFiltered(data)}
+              onReset={() => {
+                setFiltered(data);
+                setCurrentPage(1);
+              }}
             />
 
+            {/* 테이블 */}
             <DataTable
-              data={filtered}
+              data={paginatedData}
               onSelect={(item) => {
                 setSelectedItem(item);
                 setShowView(true);
@@ -69,8 +100,13 @@ function AdminPage() {
               }}
             />
 
-            <Pagination />
+            <Pagination
+              currentPage={currentPage}
+              totalPage={Math.ceil(filtered.length / itemsPerPage)}
+              onPageChange={setCurrentPage}
+            />
 
+            {/* 등록 버튼 */}
             <div className="admin-controls">
               <button
                 onClick={() => setShowRegister(true)}
@@ -84,7 +120,12 @@ function AdminPage() {
             {showRegister && (
               <RegisterModal
                 onClose={() => setShowRegister(false)}
-                onSave={(item) => setFiltered([...filtered, item])}
+                onSave={(newItem) => {
+                  const updated = [...data, newItem];
+                  setData(updated);
+                  setFiltered(updated);
+                  setCurrentPage(1);
+                }}
               />
             )}
 
@@ -93,19 +134,23 @@ function AdminPage() {
               <DeleteModal
                 item={selectedItem}
                 onClose={() => setShowDelete(false)}
-                onConfirm={() =>
-                  setFiltered(filtered.filter((d) => d.id !== selectedItem.id))
-                }
+                onConfirm={(deletedId) => {
+                  // DeleteModal이 DB + Storage 삭제 완료한 뒤 호출하는 부분
+                  const updated = data.filter((d) => d.id !== deletedId);
+                  setData(updated);
+                  setFiltered(updated);
+                }}
               />
             )}
 
-            {/* 정보 보기 모달 */}
+            {/* 상세보기 모달 */}
             {showView && selectedItem && (
               <ViewModal
                 item={selectedItem}
                 onClose={() => setShowView(false)}
               />
             )}
+
           </div>
         </div>
       </div>

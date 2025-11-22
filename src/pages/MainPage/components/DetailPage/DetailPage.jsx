@@ -6,6 +6,8 @@ function DetailPage({ item, onClose }) {
 
   // 유튜브 영상 주소 처리
   const getVideoSrc = (url) => {
+    if (!url) return "";  // 방어 코드 추가 (undefined 방지)
+
     if (url.includes("youtube.com/watch")) {
       const videoId = url.split("v=")[1]?.split("&")[0];
       return `https://www.youtube.com/embed/${videoId}`;
@@ -13,15 +15,20 @@ function DetailPage({ item, onClose }) {
     return url;
   };
 
-  const videoSrc = getVideoSrc(item.videoUrl);
+  // ★ Supabase 실제 필드명 사용
+  const videoSrc = getVideoSrc(item.videourl);
 
   return (
     <div className="detail-overlay" onClick={onClose}>
       <div className="detail-modal" onClick={(e) => e.stopPropagation()}>
-        {/* 닫기 버튼 */}
-      <button className="D-close-btn" onClick={onClose}>
-        <img src="../Close.png" alt="close" />
-          </button>
+
+        <button className="D-close-btn" onClick={onClose}>
+          <img 
+            src={`${import.meta.env.BASE_URL}Close.png`} 
+            alt="close" 
+          />
+        </button>
+
         <div className="video-wrapper">
           {videoSrc.includes("youtube.com/embed") ? (
             <iframe
@@ -41,11 +48,6 @@ function DetailPage({ item, onClose }) {
               className="detail-video"
             />
           )}
-
-          <div className="video-overlay"></div>
-          <span className="duration">2 min</span>
-
-          
         </div>
 
         <h3 className="detail-title">{item.title}</h3>
