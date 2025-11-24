@@ -24,7 +24,7 @@ function ProductSlider({ products, onSelectItem }) {
 
         {index > 0 && (
           <button className="slide-btn left" onClick={handlePrev}>
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} />←
           </button>
         )}
 
@@ -43,7 +43,7 @@ function ProductSlider({ products, onSelectItem }) {
 
         {index + itemsPerView < products.length && (
           <button className="slide-btn right" onClick={handleNext}>
-            <ChevronRight size={24} />
+            <ChevronRight size={24} />→
           </button>
         )}
       </div>
