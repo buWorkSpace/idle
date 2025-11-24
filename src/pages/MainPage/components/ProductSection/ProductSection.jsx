@@ -4,8 +4,9 @@ import ProductCard from "./ProductCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { supabase } from "../../../../api/supabase.js";
 
+// 개별 슬라이드 컴포넌트
 function ProductSlider({ products, onSelectItem }) {
-  const itemsPerView = 3;
+  const itemsPerView = 3; // 한 번에 보여줄 아이템 수
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
@@ -51,6 +52,7 @@ function ProductSlider({ products, onSelectItem }) {
   );
 }
 
+// 전체 상품 섹션
 function ProductSection({ onSelectItem }) {
   const [groups, setGroups] = useState([]);
 
@@ -98,7 +100,11 @@ function ProductSection({ onSelectItem }) {
         <div className="divider-line"></div>
 
         {groups.map((group, i) => (
-          <ProductSlider key={i} products={group} onSelectItem={onSelectItem} />
+          <ProductSlider
+            key={i}
+            products={group}
+            onSelectItem={onSelectItem}
+          />
         ))}
 
       </div>

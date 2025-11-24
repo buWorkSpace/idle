@@ -116,7 +116,6 @@ function AdminPage() {
               </button>
             </div>
 
-            {/* 등록 모달 */}
             {showRegister && (
               <RegisterModal
                 onClose={() => setShowRegister(false)}
@@ -129,7 +128,6 @@ function AdminPage() {
               />
             )}
 
-            {/* 삭제 모달 */}
             {showDelete && selectedItem && (
               <DeleteModal
                 item={selectedItem}
